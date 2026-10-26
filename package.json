@@ -1,0 +1,31 @@
+{
+  "name": "sigil-die",
+  "version": "1.0.0",
+  "description": "The Sigil Die \u2014 a translucent glass oracle die with glitching arcane glyphs, built with WebGL2 and Three.js.",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kr99/single-die.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/kr99/single-die/issues"
+  },
+  "homepage": "https://github.com/kr99/single-die#readme",
+  "dependencies": {
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/three": "^0.186.0",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}

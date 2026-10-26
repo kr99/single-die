@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#05030b" />
+    <meta
+      name="description"
+      content="The Sigil Die — a glass oracle die with arcane, glitching glyphs. Poke it to cast."
+    />
+    <title>The Sigil Die — Arcane Glass Oracle</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="stage">
+      <div id="canvas-host" class="canvas-host"></div>
+      <div class="grain" aria-hidden="true"></div>
+      <div class="vignette" aria-hidden="true"></div>
+
+      <header class="hud hud-top">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.1">
+              <circle cx="22" cy="22" r="19" opacity=".5" />
+              <circle cx="22" cy="22" r="13.5" opacity=".85" />
+              <path d="M22 3.5 37.5 31H6.5Z" opacity=".8" />
+              <path d="M22 40.5 6.5 13h31Z" opacity=".45" />
+              <circle cx="22" cy="22" r="2.4" fill="currentColor" stroke="none" />
+            </svg>
+          </span>
+          <div class="brand-copy">
+            <p class="eyebrow">Arcane reliquary <span class="sep">//</span> No. 09</p>
+            <h1>The Sigil Die</h1>
+          </div>
+        </div>
+
+        <div class="readout" aria-live="polite">
+          <p class="eyebrow">Inscribed surface</p>
+          <p class="readout-glyph" id="readout-glyph">
+            <span class="glyph-char" id="glyph-char">ᛟ</span>
+            <span class="glyph-name" id="glyph-name">OTHALA</span>
+          </p>
+          <p class="readout-state" id="readout-state">AWAITING TOUCH</p>
+        </div>
+      </header>
+
+      <div class="frame-corners" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
+
+      <footer class="hud hud-bottom">
+        <div class="shape-panel">
+          <p class="eyebrow panel-label">Facet count</p>
+          <div class="shape-picker" role="group" aria-label="Number of die sides">
+            <button class="shape-btn is-active" type="button" data-shape="d6" aria-pressed="true">
+              <span class="shape-glyph" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <path d="M4 8.5 14 3l10 5.5v11L14 25 4 19.5Z" />
+                  <path d="M4 8.5 14 14l10-5.5M14 14v11" opacity=".55" />
+                </svg>
+              </span>
+              <span class="shape-name">D6</span>
+              <span class="shape-meta">HEX</span>
+            </button>
+            <button class="shape-btn" type="button" data-shape="d8" aria-pressed="false">
+              <span class="shape-glyph" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <path d="m14 2 10 12-10 12L4 14Z" />
+                  <path d="M14 2v4.5M14 21.5V26M4 14h4.5M19.5 14H24" opacity=".55" />
+                </svg>
+              </span>
+              <span class="shape-name">D8</span>
+              <span class="shape-meta">OCTA</span>
+            </button>
+            <button class="shape-btn" type="button" data-shape="d20" aria-pressed="false">
+              <span class="shape-glyph" aria-hidden="true">
+                <svg viewBox="0 0 28 28" fill="none" stroke="currentColor" stroke-width="1.2">
+                  <path d="M14 3 5 9v10l9 6 9-6V9Z" />
+                  <path d="M5 9l9 5 9-5M5 19l9-5 9 5M14 3v11M14 25V14" opacity=".55" />
+                </svg>
+              </span>
+              <span class="shape-name">D20</span>
+              <span class="shape-meta">ICOSA</span>
+            </button>
+          </div>
+        </div>
+
+        <p class="hint"><span class="hint-pulse" aria-hidden="true"></span> Poke the die to cast</p>
+      </footer>
+
+      <div class="boot" id="boot" aria-hidden="true">
+        <div class="boot-sigil">
+          <span></span><span></span><span></span>
+        </div>
+        <p>Reading the facets</p>
+      </div>
+
+      <p class="unsupported" id="unsupported" hidden>
+        This reliquary needs WebGL2. Try a newer browser or enable hardware acceleration.
+      </p>
+    </main>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
